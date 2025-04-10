@@ -16,6 +16,9 @@ spec:
     server: https://kubernetes.default.svc
     namespace: petclinic-dev
   syncPolicy:
+    syncOptions:
+      - CreateNamespace=true # 👈 dòng này là chìa khóa!
+
     automated:
       prune: true
       selfHeal: true
