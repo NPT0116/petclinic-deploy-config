@@ -1,50 +1,43 @@
 globalHost: spring.dev.com
 services:
-  - name: discovery-server
-    image: npt1601/discovery-server
-    tag: latest
-    port: 8761
-    nodePort: 30004
-
-  - name: config-server
-    image: npt1601/config-server
-    tag: latest
-    port: 8888
-    nodePort: 30088
-
-  - name: admin-server
-    image: npt1601/admin-server
-    tag: latest
-    port: 8080
-    nodePort: 30001
-
-  - name: api-gateway
-    image: npt1601/api-gateway
-    tag: latest
-    port: 8080
-    nodePort: 30002
-    env:
-      - name: CONFIG_SERVER_URL
-        value: http://config-server.petclinic-dev.svc.cluster.local:8888
-
-  - name: customers-service
-    image: npt1601/customers-service
-    tag: latest
-    port: 8080
-    nodePort: 30003
-
-  - name: visits-service
-    image: npt1601/visits-service
-    tag: latest
-    port: 8080
-    nodePort: 30008
-
   - name: vets-service
     image: npt1601/vets-service
     tag: latest
     port: 8080
     nodePort: 30007
-
+  - name: customers-service
+    image: npt1601/customers-service
+    tag: latest
+    port: 8080
+    nodePort: 30003
+  - name: visits-service
+    image: npt1601/visits-service
+    tag: b80995d
+    port: 8080
+    nodePort: 30008
+  - name: api-gateway
+    image: npt1601/api-gateway
+    tag: c224480
+    port: 8080
+    nodePort: 30002
+    env:
+      - name: CONFIG_SERVER_URL
+        value: http://config-server.petclinic-dev.svc.cluster.local:8888
+  - name: config-server
+    image: npt1601/config-server
+    tag: latest
+    port: 8080
+    nodePort: 30088
+  - name: discovery-server
+    image: npt1601/discovery-server
+    tag: 118a07a
+    port: 8080
+    nodePort: 30004
+  - name: admin-server
+    image: npt1601/admin-server
+    tag: latest
+    port: 8080
+    nodePort: 30001
   - name: genai-service
     image: npt1601/genai-service
     tag: latest
