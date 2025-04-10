@@ -1,4 +1,7 @@
 globalHost: spring.staging.com
+ingress:
+  enabled: true
+  host: spring.staging.com
 services:
   - name: discovery-server
     image: npt1601/discovery-server
@@ -23,6 +26,8 @@ services:
     tag: latest
     port: 8080
     nodePort: 30002
+    ingress: true
+
     env:
       - name: CONFIG_SERVER_URL
         value: http://config-server.petclinic-staging.svc.cluster.local:8888
