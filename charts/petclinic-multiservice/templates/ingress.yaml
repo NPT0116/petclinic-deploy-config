@@ -1,5 +1,5 @@
 {{- range .Values.services }}
-{{- if eq .name "api-gateway" }}
+{{- if and $.Values.ingress.enabled .ingress }}
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -10,7 +10,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: {{ $.Values.globalHost }}
+    - host: {{ $.Values.ingress.host }}
       http:
         paths:
           - path: /

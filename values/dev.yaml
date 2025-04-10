@@ -1,40 +1,49 @@
 globalHost: spring.dev.com
+
 ingress:
   enabled: true
   host: spring.dev.com
+
 services:
   - name: vets-service
     image: npt1601/vets-service
     tag: latest
     port: 8080
+
   - name: customers-service
     image: npt1601/customers-service
     tag: latest
     port: 8080
+
   - name: visits-service
     image: npt1601/visits-service
     tag: b80995d
     port: 8080
+
   - name: api-gateway
     image: npt1601/api-gateway
     tag: c224480
     port: 8080
+    ingress: true
     env:
       - name: CONFIG_SERVER_URL
-        value: http://config-server.petclinic-dev.svc.cluster.local:8888
+        value: http://config-server.petclinic-dev.svc.cluster.local:8088
 
   - name: config-server
     image: npt1601/config-server
     tag: latest
     port: 8080
+
   - name: discovery-server
     image: npt1601/discovery-server
     tag: 118a07a
     port: 8080
+
   - name: admin-server
     image: npt1601/admin-server
     tag: latest
     port: 8080
+
   - name: genai-service
     image: npt1601/genai-service
     tag: latest
