@@ -18,7 +18,7 @@ services:
     port: 8080
   - name: api-gateway
     image: npt1601/api-gateway
-    tag: e843e49
+    tag: 2dc357e
     port: 8080
     env:
       - name: CONFIG_SERVER_URL
@@ -29,7 +29,7 @@ services:
     port: 8080
   - name: discovery-server
     image: npt1601/discovery-server
-    tag: e843e49
+    tag: 5591717
     port: 8080
   - name: admin-server
     image: npt1601/admin-server
