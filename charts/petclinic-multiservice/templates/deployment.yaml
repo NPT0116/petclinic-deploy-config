@@ -20,8 +20,6 @@ spec:
           ports:
             - containerPort: {{ .port }}
           env:
-            - name: SPRING_PROFILES_ACTIVE
-              value: "docker"
             - name: EUREKA_INSTANCE_HOSTNAME
               value: "{{ .name }}"
             {{- if ne .name "config-server" }}
