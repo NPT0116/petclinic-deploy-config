@@ -2,6 +2,7 @@ globalHost: spring.dev.com
 ingress:
   enabled: true
   host: spring.dev.com
+namespace: petclinic-dev
 services:
   - name: vets-service
     image: npt1601/vets-service
