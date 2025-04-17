@@ -6,78 +6,23 @@ ingress:
 services:
   - name: vets-service
     image: npt1601/vets-service
-    tag: latest
-    port: 8083
-    env:
-      - name: EUREKA_SERVER_URL
-        value: http://discovery-server.petclinic-dev.svc.cluster.local:8761
-      - name: CONFIG_SERVER_URL
-        value: http://config-server.petclinic-dev.svc.cluster.local:8888
-
+    tag: 91c6061
+    port: 8080
   - name: customers-service
     image: npt1601/customers-service
-    tag: latest
-    port: 8081
-    env:
-      - name: EUREKA_SERVER_URL
-        value: http://discovery-server.petclinic-dev.svc.cluster.local:8761
-      - name: CONFIG_SERVER_URL
-        value: http://config-server.petclinic-dev.svc.cluster.local:8888
-
+    tag: 91c6061
+    port: 8080
   - name: visits-service
     image: npt1601/visits-service
-    tag: b80995d
-    port: 8082
-    env:
-      - name: EUREKA_SERVER_URL
-        value: http://discovery-server.petclinic-dev.svc.cluster.local:8761
-      - name: CONFIG_SERVER_URL
-        value: http://config-server.petclinic-dev.svc.cluster.local:8888
-
+    tag: 91c6061
+    port: 8080
   - name: api-gateway
     image: npt1601/api-gateway
     tag: b3767a8
     port: 8080
     env:
-      - name: EUREKA_SERVER_URL
-        value: http://discovery-server.petclinic-dev.svc.cluster.local:8761
       - name: CONFIG_SERVER_URL
         value: http://config-server.petclinic-dev.svc.cluster.local:8888
-<<<<<<< HEAD
-
-  - name: config-server
-    image: npt1601/config-server
-    tag: latest
-    port: 8888
-    env:
-      - name: CONFIG_SERVER_URL
-        value: http://config-server.petclinic-dev.svc.cluster.local:8888
-
-  - name: discovery-server
-    image: npt1601/discovery-server
-    tag: 118a07a
-    port: 8761
-
-  - name: admin-server
-    image: npt1601/admin-server
-    tag: latest
-    port: 9090
-    env:
-      - name: EUREKA_SERVER_URL
-        value: http://discovery-server.petclinic-dev.svc.cluster.local:8761
-      - name: CONFIG_SERVER_URL
-        value: http://config-server.petclinic-dev.svc.cluster.local:8888
-
-  - name: genai-service
-    image: npt1601/genai-service
-    tag: latest
-    port: 8084
-    env:
-      - name: EUREKA_SERVER_URL
-        value: http://discovery-server.petclinic-dev.svc.cluster.local:8761
-      - name: CONFIG_SERVER_URL
-        value: http://config-server.petclinic-dev.svc.cluster.local:8888
-=======
   - name: config-server
     image: npt1601/config-server
     tag: ce0a734
@@ -94,4 +39,3 @@ services:
     image: npt1601/genai-service
     tag: 91c6061
     port: 8080
->>>>>>> 1760d04d8a932add01954e981d8168107fefece6
