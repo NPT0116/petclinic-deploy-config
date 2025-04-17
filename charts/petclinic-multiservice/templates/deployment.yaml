@@ -38,14 +38,16 @@ spec:
             periodSeconds: 5
           env:
             - name: EUREKA_INSTANCE_HOSTNAME
-              value: "{{ .name }}"
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP
             {{- if ne .name "config-server" }}
             - name: SPRING_CLOUD_CONFIG_URI
-              value: "http://config-server:8888"
+              value: "http://config-server.petclinic-dev.svc.cluster.local:8888"
             {{- end }}
             {{- if ne .name "discovery-server" }}
             - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
-              value: "http://discovery-server:8761/eureka/"
+              value: "http://discovery-server.petclinic-dev.svc.cluster.local:8761/eureka/"
             {{- end }}
           {{- if .env }}
           {{- range .env }}
