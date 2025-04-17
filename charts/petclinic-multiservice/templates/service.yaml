@@ -5,11 +5,11 @@ kind: Service
 metadata:
   name: {{ .name }}
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
     app: {{ .name }}
   ports:
     - port: {{ .port }}
-      targetPort: 8080
-      protocol: TCP
+      targetPort: {{ .port }}
+      nodePort: {{ .nodePort }}
 {{- end }}
