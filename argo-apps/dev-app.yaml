@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/NPT0116/petclinic-deploy-config.git
     targetRevision: main
-    path: charts/petclinic-multiservice
+    path: charts/petclinic-multiservice-chart
     helm:
       valueFiles:
         - ../../values/dev.yaml
