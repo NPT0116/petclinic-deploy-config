@@ -32,7 +32,7 @@ services:
         value: http://config-server.petclinic-dev.svc.cluster.local:8888
   - name: api-gateway
     image: npt1601/api-gateway
-    tag: b3767a8
+    tag: latest
     port: 8080
     env:
       - name: EUREKA_SERVER_URL
