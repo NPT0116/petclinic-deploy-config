@@ -5,7 +5,7 @@ ingress:
 services:
   - name: vets-service
     image: npt1601/vets-service
-    tag: 0531222
+    tag: latest
     port: 8083
     env:
       - name: EUREKA_SERVER_URL
@@ -14,7 +14,7 @@ services:
         value: http://config-server.petclinic-dev.svc.cluster.local:8888
   - name: customers-service
     image: npt1601/customers-service
-    tag: 0531222
+    tag: latest
     port: 8081
     env:
       - name: EUREKA_SERVER_URL
@@ -23,7 +23,7 @@ services:
         value: http://config-server.petclinic-dev.svc.cluster.local:8888
   - name: visits-service
     image: npt1601/visits-service
-    tag: 0531222
+    tag: latest
     port: 8082
     env:
       - name: EUREKA_SERVER_URL
@@ -32,7 +32,7 @@ services:
         value: http://config-server.petclinic-dev.svc.cluster.local:8888
   - name: api-gateway
     image: npt1601/api-gateway
-    tag: 0531222
+    tag: b3767a8
     port: 8080
     env:
       - name: EUREKA_SERVER_URL
@@ -50,14 +50,14 @@ services:
         value: http://config-server.petclinic-dev.svc.cluster.local:8888
   - name: discovery-server
     image: npt1601/discovery-server
-    tag: 302a746
+    tag: 14d6387
     port: 8761
     env:
       - name: CONFIG_SERVER_URL
         value: http://config-server.petclinic-dev.svc.cluster.local:8888
   - name: admin-server
     image: npt1601/admin-server
-    tag: 0531222
+    tag: latest
     port: 9090
     env:
       - name: EUREKA_SERVER_URL
