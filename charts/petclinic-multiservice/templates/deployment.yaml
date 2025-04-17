@@ -19,7 +19,7 @@ spec:
         {{- if ne .name "discovery-server" }}
         - name: wait-for-discovery
           image: busybox
-          command: ['sh', '-c', 'until nc -z config-server.{{ $.Values.namespace }}.svc.cluster.local 8888; do echo waiting for config-server; sleep 2; done;']
+          command: ['sh', '-c', 'until nc -z discovery-server.{{ $.Values.namespace }}.svc.cluster.local 8761; do echo waiting for config-server; sleep 2; done;']
         - name: wait-for-config
           image: busybox
           command: ['sh', '-c', 'until nc -z config-server.{{ $.Values.namespace }}.svc.cluster.local 8888; do echo waiting for config-server; sleep 2; done;']
