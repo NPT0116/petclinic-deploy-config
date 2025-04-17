@@ -37,6 +37,8 @@ spec:
             initialDelaySeconds: 10
             periodSeconds: 5
           env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: "docker"
             - name: EUREKA_INSTANCE_HOSTNAME
               value: "{{ .name }}"
             {{- if ne .name "config-server" }}
