@@ -5,7 +5,7 @@ ingress:
 services:
   - name: vets-service
     image: npt1601/vets-service
-    tag: latest
+    tag: bba61c4
     port: 8083
     env:
       - name: EUREKA_SERVER_URL
