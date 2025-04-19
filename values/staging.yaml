@@ -5,7 +5,7 @@ ingress:
 services:
   - name: vets-service
     image: npt1601/vets-service
-    tag: v1.2.5
+    tag: v1.2.6
     port: 8083
     env:
       - name: EUREKA_SERVER_URL
@@ -15,7 +15,7 @@ services:
 
   - name: customers-service
     image: npt1601/customers-service
-    tag: v1.2.5
+    tag: v1.2.6
     port: 8081
     env:
       - name: EUREKA_SERVER_URL
@@ -25,7 +25,7 @@ services:
 
   - name: visits-service
     image: npt1601/visits-service
-    tag: v1.2.5
+    tag: v1.2.6
     port: 8082
     env:
       - name: EUREKA_SERVER_URL
@@ -35,7 +35,7 @@ services:
 
   - name: api-gateway
     image: npt1601/api-gateway
-    tag: v1.2.5
+    tag: v1.2.6
     port: 8080
     env:
       - name: EUREKA_SERVER_URL
@@ -45,7 +45,7 @@ services:
 
   - name: config-server
     image: npt1601/config-server
-    tag: v1.2.5
+    tag: v1.2.6
     port: 8888
     env:
       - name: EUREKA_SERVER_URL
@@ -55,7 +55,7 @@ services:
 
   - name: discovery-server
     image: npt1601/discovery-server
-    tag: v1.2.5
+    tag: v1.2.6
     port: 8761
     env:
       - name: EUREKA_SERVER_URL
@@ -65,7 +65,7 @@ services:
 
   - name: admin-server
     image: npt1601/admin-server
-    tag: v1.2.5
+    tag: v1.2.6
     port: 9090
     env:
       - name: EUREKA_SERVER_URL
@@ -75,7 +75,7 @@ services:
 
   - name: genai-service
     image: npt1601/genai-service
-    tag: v1.2.5
+    tag: v1.2.6
     port: 8084
     env:
       - name: EUREKA_SERVER_URL
