@@ -1,42 +1,13 @@
 globalHost: spring.staging.com
-
 ingress:
   enabled: true
   host: spring.staging.com
-
 services:
-  - name: discovery-server
-    image: npt1601/discovery-server
-    tag: latest
-    port: 8761
-    nodePort: 30004
-
-  - name: config-server
-    image: npt1601/config-server
-    tag: latest
-    port: 8888
-    nodePort: 30088
-    env:
-      - name: CONFIG_SERVER_URL
-        value: http://config-server.petclinic-staging.svc.cluster.local:8888
-
-  - name: admin-server
-    image: npt1601/admin-server
-    tag: latest
-    port: 9090
-    nodePort: 30001
-    env:
-      - name: EUREKA_SERVER_URL
-        value: http://discovery-server.petclinic-staging.svc.cluster.local:8761
-      - name: CONFIG_SERVER_URL
-        value: http://config-server.petclinic-staging.svc.cluster.local:8888
-
-  - name: api-gateway
-    image: npt1601/api-gateway
-    tag: latest
-    port: 8080
-    nodePort: 30002
-    ingress: true
+  - name: vets-service
+    image: npt1601/vets-service
+    tag: C:\jenkins-agent\universal\workspace\staging-config-repo>git describe --tags --match "v*.*.*" --abbrev=0 
+v1.2.5
+    port: 8083
     env:
       - name: EUREKA_SERVER_URL
         value: http://discovery-server.petclinic-staging.svc.cluster.local:8761
@@ -45,9 +16,9 @@ services:
 
   - name: customers-service
     image: npt1601/customers-service
-    tag: latest
+    tag: C:\jenkins-agent\universal\workspace\staging-config-repo>git describe --tags --match "v*.*.*" --abbrev=0 
+v1.2.5
     port: 8081
-    nodePort: 30003
     env:
       - name: EUREKA_SERVER_URL
         value: http://discovery-server.petclinic-staging.svc.cluster.local:8761
@@ -56,20 +27,53 @@ services:
 
   - name: visits-service
     image: npt1601/visits-service
-    tag: latest
+    tag: C:\jenkins-agent\universal\workspace\staging-config-repo>git describe --tags --match "v*.*.*" --abbrev=0 
+v1.2.5
     port: 8082
-    nodePort: 30008
     env:
       - name: EUREKA_SERVER_URL
         value: http://discovery-server.petclinic-staging.svc.cluster.local:8761
       - name: CONFIG_SERVER_URL
         value: http://config-server.petclinic-staging.svc.cluster.local:8888
 
-  - name: vets-service
-    image: npt1601/vets-service
-    tag: latest
-    port: 8083
-    nodePort: 30007
+  - name: api-gateway
+    image: npt1601/api-gateway
+    tag: C:\jenkins-agent\universal\workspace\staging-config-repo>git describe --tags --match "v*.*.*" --abbrev=0 
+v1.2.5
+    port: 8080
+    env:
+      - name: EUREKA_SERVER_URL
+        value: http://discovery-server.petclinic-staging.svc.cluster.local:8761
+      - name: CONFIG_SERVER_URL
+        value: http://config-server.petclinic-staging.svc.cluster.local:8888
+
+  - name: config-server
+    image: npt1601/config-server
+    tag: C:\jenkins-agent\universal\workspace\staging-config-repo>git describe --tags --match "v*.*.*" --abbrev=0 
+v1.2.5
+    port: 8888
+    env:
+      - name: EUREKA_SERVER_URL
+        value: http://discovery-server.petclinic-staging.svc.cluster.local:8761
+      - name: CONFIG_SERVER_URL
+        value: http://config-server.petclinic-staging.svc.cluster.local:8888
+
+  - name: discovery-server
+    image: npt1601/discovery-server
+    tag: C:\jenkins-agent\universal\workspace\staging-config-repo>git describe --tags --match "v*.*.*" --abbrev=0 
+v1.2.5
+    port: 8761
+    env:
+      - name: EUREKA_SERVER_URL
+        value: http://discovery-server.petclinic-staging.svc.cluster.local:8761
+      - name: CONFIG_SERVER_URL
+        value: http://config-server.petclinic-staging.svc.cluster.local:8888
+
+  - name: admin-server
+    image: npt1601/admin-server
+    tag: C:\jenkins-agent\universal\workspace\staging-config-repo>git describe --tags --match "v*.*.*" --abbrev=0 
+v1.2.5
+    port: 9090
     env:
       - name: EUREKA_SERVER_URL
         value: http://discovery-server.petclinic-staging.svc.cluster.local:8761
@@ -78,11 +82,12 @@ services:
 
   - name: genai-service
     image: npt1601/genai-service
-    tag: latest
+    tag: C:\jenkins-agent\universal\workspace\staging-config-repo>git describe --tags --match "v*.*.*" --abbrev=0 
+v1.2.5
     port: 8084
-    nodePort: 30005
     env:
       - name: EUREKA_SERVER_URL
         value: http://discovery-server.petclinic-staging.svc.cluster.local:8761
       - name: CONFIG_SERVER_URL
         value: http://config-server.petclinic-staging.svc.cluster.local:8888
+
