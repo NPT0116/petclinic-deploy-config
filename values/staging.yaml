@@ -5,8 +5,7 @@ ingress:
 services:
   - name: vets-service
     image: npt1601/vets-service
-    tag: C:\jenkins-agent\universal\workspace\staging-config-repo>git describe --tags --match "v*.*.*" --abbrev=0 
-v1.2.5
+    tag: v1.2.5
     port: 8083
     env:
       - name: EUREKA_SERVER_URL
@@ -16,8 +15,7 @@ v1.2.5
 
   - name: customers-service
     image: npt1601/customers-service
-    tag: C:\jenkins-agent\universal\workspace\staging-config-repo>git describe --tags --match "v*.*.*" --abbrev=0 
-v1.2.5
+    tag: v1.2.5
     port: 8081
     env:
       - name: EUREKA_SERVER_URL
@@ -27,8 +25,7 @@ v1.2.5
 
   - name: visits-service
     image: npt1601/visits-service
-    tag: C:\jenkins-agent\universal\workspace\staging-config-repo>git describe --tags --match "v*.*.*" --abbrev=0 
-v1.2.5
+    tag: v1.2.5
     port: 8082
     env:
       - name: EUREKA_SERVER_URL
@@ -38,8 +35,7 @@ v1.2.5
 
   - name: api-gateway
     image: npt1601/api-gateway
-    tag: C:\jenkins-agent\universal\workspace\staging-config-repo>git describe --tags --match "v*.*.*" --abbrev=0 
-v1.2.5
+    tag: v1.2.5
     port: 8080
     env:
       - name: EUREKA_SERVER_URL
@@ -49,8 +45,7 @@ v1.2.5
 
   - name: config-server
     image: npt1601/config-server
-    tag: C:\jenkins-agent\universal\workspace\staging-config-repo>git describe --tags --match "v*.*.*" --abbrev=0 
-v1.2.5
+    tag: v1.2.5
     port: 8888
     env:
       - name: EUREKA_SERVER_URL
@@ -60,8 +55,7 @@ v1.2.5
 
   - name: discovery-server
     image: npt1601/discovery-server
-    tag: C:\jenkins-agent\universal\workspace\staging-config-repo>git describe --tags --match "v*.*.*" --abbrev=0 
-v1.2.5
+    tag: v1.2.5
     port: 8761
     env:
       - name: EUREKA_SERVER_URL
@@ -71,8 +65,7 @@ v1.2.5
 
   - name: admin-server
     image: npt1601/admin-server
-    tag: C:\jenkins-agent\universal\workspace\staging-config-repo>git describe --tags --match "v*.*.*" --abbrev=0 
-v1.2.5
+    tag: v1.2.5
     port: 9090
     env:
       - name: EUREKA_SERVER_URL
@@ -82,8 +75,7 @@ v1.2.5
 
   - name: genai-service
     image: npt1601/genai-service
-    tag: C:\jenkins-agent\universal\workspace\staging-config-repo>git describe --tags --match "v*.*.*" --abbrev=0 
-v1.2.5
+    tag: v1.2.5
     port: 8084
     env:
       - name: EUREKA_SERVER_URL
